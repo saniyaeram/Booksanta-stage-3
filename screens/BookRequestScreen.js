@@ -27,23 +27,7 @@ export default class BookRequestScreen extends Component{
 
 
 
-  addRequest =(bookName,reasonToRequest)=>{
-    var userId = this.state.userId
-    var randomRequestId = this.createUniqueId()
-    db.collection('requested_books').add({
-        "user_id": userId,
-        "book_name":bookName,
-        "reason_to_request":reasonToRequest,
-        "request_id"  : randomRequestId,
-    })
-
-    this.setState({
-        bookName :'',
-        reasonToRequest : ''
-    })
-
-    return Alert.alert("Book Requested Successfully")
-  }
+  
 
 
   render(){
