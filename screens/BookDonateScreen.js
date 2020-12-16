@@ -14,15 +14,7 @@ export default class BookDonateScreen extends Component{
   this.requestRef= null
   }
 
-  getRequestedBooksList =()=>{
-    this.requestRef = db.collection("requested_books")
-    .onSnapshot((snapshot)=>{
-      var requestedBooksList = snapshot.docs.map(document => document.data());
-      this.setState({
-        requestedBooksList : requestedBooksList
-      });
-    })
-  }
+  
 
   componentDidMount(){
     this.getRequestedBooksList()
@@ -36,18 +28,7 @@ export default class BookDonateScreen extends Component{
 
   renderItem = ( {item, i} ) =>{
     return (
-      <ListItem
-        key={i}
-        title={item.book_name}
-        subtitle={item.reason_to_request}
-        titleStyle={{ color: 'black', fontWeight: 'bold' }}
-        rightElement={
-            <TouchableOpacity style={styles.button}>
-              <Text style={{color:'#ffff'}}>View</Text>
-            </TouchableOpacity>
-          }
-        bottomDivider
-      />
+     
     )
   }
 
